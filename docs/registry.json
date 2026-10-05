@@ -1,8 +1,15 @@
 {
   "version": 1,
-  "updated": 1791195854925,
+  "updated": 1791195955689,
   "note": "HPX SMINE cloud upgrade registry. Managed by the private developer panel (dev.html). Do not edit by hand.",
   "accounts": {
+    "HPX-Q7PBVWRF": {
+      "tier": "DEVELOPER",
+      "days": 0,
+      "exp": 0,
+      "at": 1791195859825,
+      "passHash": "1bdd988330f92c6ae9f274c25cf30f7840ed45a03b885630d17dcacb07511908"
+    },
     "HPX-F8T9DQL4": {
       "tier": "VVIP",
       "days": 0,
@@ -10,12 +17,12 @@
       "at": 1791195552336,
       "passHash": "1b25141d642399e5edacdcb1f786d4978d5991cfeb979cbd710e5b20ab9f61ee"
     },
-    "HPX-Q7PBVWRF": {
+    "HPX-8J29HV7Y": {
       "tier": "DEVELOPER",
       "days": 0,
       "exp": 0,
-      "at": 1791195792170,
-      "passHash": "1bdd988330f92c6ae9f274c25cf30f7840ed45a03b885630d17dcacb07511908"
+      "at": 1791195955215,
+      "passHash": "4647bd14731f215ed37c7b9835b1161893e7f2edba55236390157f8eb734163e"
     }
   }
 }
