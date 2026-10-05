@@ -305,7 +305,7 @@ document.querySelectorAll("#segDur .opt").forEach(function(o){
 function showResult(el, ok, msg){ el.className = "result show " + (ok?"ok":"bad"); el.textContent = msg; }
 
 /* ---------- upgrade / downgrade ---------- */
-document.getElementById("btnUpgrade").addEventListener("click", function(){
+document.getElementById("btnUpgrade").addEventListener("click", async function(){
   var user = document.getElementById("fUser").value.trim().toUpperCase();
   var pass = document.getElementById("fPass").value.trim();
   var el = document.getElementById("formResult");
@@ -315,7 +315,8 @@ document.getElementById("btnUpgrade").addEventListener("click", function(){
 
   var days = parseInt(st.days,10);
   var exp = days === 0 ? 0 : (Date.now() + days*86400000);
-  reg.accounts[user] = { tier: st.tier, days: days, exp: exp, at: Date.now(), pass: pass || undefined };
+  var passHash = pass ? await sha256(pass) : "";
+  reg.accounts[user] = { tier: st.tier, days: days, exp: exp, at: Date.now(), passHash: passHash || undefined };
   saveReg(reg); renderAll();
 
   var expTxt = days === 0 ? "FOREVER" : (days + " hari");
@@ -411,6 +412,15 @@ function b64encode(str){
 function b64decode(str){
   return decodeURIComponent(escape(atob(str.replace(/\n/g,""))));
 }
+/* SHA-256 hex digest — used to store a password HASH (never the plaintext)
+   in the registry, so the public cloud file cannot leak user passwords. */
+async function sha256(str){
+  try {
+    var enc = new TextEncoder().encode(str);
+    var buf = await crypto.subtle.digest("SHA-256", enc);
+    return Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2,"0"); }).join("");
+  } catch(e){ return ""; }
+}
 function ghHeaders(token){
   return { "Authorization":"Bearer " + token, "Accept":"application/vnd.github+json", "Content-Type":"application/json" };
 }
@@ -424,6 +434,20 @@ async function getRemoteSha(token, path){
   return j.sha;
 }
 
+/* Build a copy of the registry WITHOUT per-account passwords.
+   The cloud registry is PUBLIC (raw.githubusercontent.com), so passwords
+   must never be written there. The app validates the password against its
+   own local account password, so the field is not needed in the cloud. */
+function sanitizedReg(){
+  var out = { version: reg.version || 1, updated: Date.now(), note: reg.note || "HPX SMINE cloud upgrade registry. Managed by the private developer panel (dev.html). Do not edit by hand.", accounts: {} };
+  var src = reg.accounts || {};
+  Object.keys(src).forEach(function(k){
+    var a = src[k] || {};
+    out.accounts[k] = { tier: a.tier, days: a.days, exp: a.exp, at: a.at, passHash: a.passHash };
+  });
+  return out;
+}
+
 async function pushToCloud(silent){
   var el = document.getElementById("cloudResult");
   var token = document.getElementById("fToken").value.trim();
@@ -432,7 +456,7 @@ async function pushToCloud(silent){
   if (!silent) showResult(el,true,"⏳ Mengirim ke cloud...");
   try {
     var sha = await getRemoteSha(token, path);
-    var payload = { message: "HPX registry update " + new Date().toISOString(), content: b64encode(JSON.stringify(reg,null,2)), branch: BRANCH };
+    var payload = { message: "HPX registry update " + new Date().toISOString(), content: b64encode(JSON.stringify(sanitizedReg(),null,2)), branch: BRANCH };
     if (sha) payload.sha = sha;
     var r = await fetch("https://api.github.com/repos/" + OWNER + "/" + REPO + "/contents/" + path, {
       method:"PUT", headers: ghHeaders(token), body: JSON.stringify(payload)
