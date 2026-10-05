@@ -1,0 +1,274 @@
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Upgrade Akun — Premium / VVIP | HPX SMINE</title>
+<meta name="description" content="Upgrade akun HPX SMINE dari FREE ke Premium atau VVIP. Pilih durasi 1 hari, 2 hari, 7 hari, atau Forever. Proses cepat via WhatsApp." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<style>
+  .up-wrap{max-width:900px;margin:0 auto}
+  .up-card{background:linear-gradient(160deg,rgba(0,229,255,.08),rgba(255,45,155,.06));border:1px solid rgba(0,229,255,.28);border-radius:18px;padding:26px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .up-label{display:block;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.18em;color:var(--cyan);margin:0 0 8px}
+  .up-input{width:100%;box-sizing:border-box;background:rgba(4,5,10,.7);border:1px solid rgba(0,229,255,.3);border-radius:12px;padding:14px 16px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:16px;outline:none;transition:.2s}
+  .up-input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,229,255,.15)}
+  .up-grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.up-grid2{grid-template-columns:1fr}}
+  .tier-tabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+  .tier-tab{cursor:pointer;border:1px solid rgba(255,255,255,.14);background:rgba(4,5,10,.6);border-radius:14px;padding:16px;transition:.2s;text-align:center}
+  .tier-tab:hover{border-color:rgba(0,229,255,.4)}
+  .tier-tab.active{border-color:var(--cyan);background:linear-gradient(160deg,rgba(0,229,255,.16),rgba(255,45,155,.1));box-shadow:0 0 0 3px rgba(0,229,255,.12)}
+  .tier-tab .t{font-family:'Orbitron',sans-serif;font-size:15px;letter-spacing:.08em;color:#fff}
+  .tier-tab .d{font-size:12px;color:var(--dim);margin-top:6px}
+  .tier-tab.vvip.active{border-color:var(--pink,#ff2d9b);background:linear-gradient(160deg,rgba(255,45,155,.18),rgba(225,0,255,.1));box-shadow:0 0 0 3px rgba(255,45,155,.12)}
+  .dur-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
+  @media(max-width:640px){.dur-grid{grid-template-columns:repeat(2,1fr)}}
+  .dur{cursor:pointer;border:1px solid rgba(255,255,255,.14);background:rgba(4,5,10,.6);border-radius:14px;padding:16px 10px;text-align:center;transition:.2s}
+  .dur:hover{border-color:rgba(0,229,255,.4)}
+  .dur.active{border-color:var(--cyan);background:linear-gradient(160deg,rgba(0,229,255,.16),rgba(46,123,255,.1));box-shadow:0 0 0 3px rgba(0,229,255,.12)}
+  .dur .t{font-family:'Orbitron',sans-serif;font-size:14px;color:#fff}
+  .dur .p{font-size:12px;color:var(--cyan);margin-top:6px}
+  .summary{margin-top:22px;background:rgba(4,5,10,.75);border:1px solid rgba(255,45,155,.3);border-radius:14px;padding:18px}
+  .summary .row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:15px}
+  .summary .row:last-child{border-bottom:none}
+  .summary .k{color:var(--dim)}
+  .summary .v{font-family:'Orbitron',sans-serif;color:#fff;font-size:14px}
+  .up-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .up-actions .btn{flex:1;min-width:200px;justify-content:center}
+  .note{margin-top:16px;font-size:13px;color:var(--dim);line-height:1.6}
+  .badge-free{display:inline-block;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.14em;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--dim)}
+  .req-list{margin-top:14px;font-size:13px;color:var(--dim)}
+  .req-item{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
+  .req-item b{color:var(--text);font-family:'Orbitron',sans-serif;font-size:12px}
+  .ok-msg{display:none;margin-top:16px;background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.45);border-radius:12px;padding:14px 16px;color:var(--success);font-size:14px}
+</style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="index.html#top">
+      <span class="logo">H</span>
+      <span><b>HPX SMINE</b><small>GAME SPACE</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Fitur</a>
+      <a href="index.html#premium">Premium</a>
+      <a href="index.html#install">Cara Install</a>
+      <a href="account.html">Akun</a>
+      <a href="create-akun.html">Buat Akun</a>
+      <a href="upgrade.html">Upgrade</a>
+      <a href="index.html#download">Download</a>
+    </div>
+    <a class="nav-cta" href="index.html#download">Download APK</a>
+  </div>
+</nav>
+
+<header class="hero" id="top" style="padding-bottom:10px">
+  <div class="wrap" style="text-align:center">
+    <span class="pill"><span class="dot"></span> Upgrade Akun &middot; Premium / VVIP</span>
+    <h1 class="title" style="margin:14px 0 0">UPGRADE AKUN<br/>KAMU.</h1>
+    <p class="subtitle" style="max-width:640px;margin:16px auto 0">Ubah akun <b>FREE</b> kamu menjadi <b>Premium</b> atau <b>VVIP</b>. Masukkan akunmu, pilih paket &amp; durasi, lalu kirim permintaan upgrade lewat WhatsApp. Proses cepat &amp; aman.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap up-wrap">
+
+    <div class="up-card">
+      <div class="up-grid2">
+        <div>
+          <label class="up-label" for="inUser">USERNAME HPX</label>
+          <input id="inUser" class="up-input" type="text" placeholder="Contoh: HPX-HGY68XC" autocomplete="off" />
+        </div>
+        <div>
+          <label class="up-label" for="inPass">PASSWORD</label>
+          <input id="inPass" class="up-input" type="text" placeholder="Contoh: HPX0001" autocomplete="off" />
+        </div>
+      </div>
+      <p class="note" id="savedHint" style="margin-top:10px">💡 Akun tersimpan di perangkat ini akan terisi otomatis. <a href="create-akun.html" style="color:var(--cyan)">Belum punya akun? Buat dulu →</a></p>
+
+      <div style="margin-top:22px">
+        <span class="up-label">PILIH PAKET</span>
+        <div class="tier-tabs">
+          <div class="tier-tab active" data-tier="PREMIUM">
+            <div class="t">⭐ PREMIUM</div>
+            <div class="d">Unlimited app &amp; energy · Floating window · Network optimizer</div>
+          </div>
+          <div class="tier-tab vvip" data-tier="VVIP">
+            <div class="t">👑 VVIP</div>
+            <div class="d">Semua Premium · Fitur eksperimental · Prioritas tertinggi</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:22px">
+        <span class="up-label">PILIH DURASI</span>
+        <div class="dur-grid">
+          <div class="dur" data-days="1"><div class="t">1 HARI</div><div class="p">Rp 2.000</div></div>
+          <div class="dur" data-days="2"><div class="t">2 HARI</div><div class="p">Rp 3.500</div></div>
+          <div class="dur active" data-days="7"><div class="t">7 HARI</div><div class="p">Rp 10.000</div></div>
+          <div class="dur" data-days="0"><div class="t">FOREVER</div><div class="p">Rp 25.000</div></div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div class="row"><span class="k">Username</span><span class="v" id="sUser">—</span></div>
+        <div class="row"><span class="k">Paket</span><span class="v" id="sTier">PREMIUM</span></div>
+        <div class="row"><span class="k">Durasi</span><span class="v" id="sDur">7 HARI</span></div>
+        <div class="row"><span class="k">Total</span><span class="v" id="sPrice">Rp 10.000</span></div>
+      </div>
+
+      <div class="up-actions">
+        <button id="btnUpgrade" class="btn btn-primary" type="button">🚀 Kirim Permintaan Upgrade</button>
+        <a class="btn btn-ghost" href="index.html#download">⬇ Download App</a>
+      </div>
+
+      <div id="okMsg" class="ok-msg"></div>
+
+      <p class="note">✅ Setelah menekan tombol, WhatsApp akan terbuka dengan pesan berisi akun &amp; paket pilihanmu. Admin akan memproses upgrade dan mengaktifkannya di akunmu. Kamu juga bisa langsung upgrade dari dalam app <b>HPX PREMM ACCESS</b>.</p>
+    </div>
+
+    <div class="up-card" style="margin-top:22px">
+      <span class="eyebrow">Riwayat Permintaan Upgrade</span>
+      <div id="reqList" class="req-list"><div class="req-item"><span>Belum ada permintaan.</span></div></div>
+    </div>
+
+    <div class="band" style="margin-top:26px">
+      <h2>Kenapa upgrade?</h2>
+      <div class="grid cols-3" style="margin-top:18px">
+        <div class="card"><div class="ic">🚀</div><h3>Unlimited</h3><p>Tambah aplikasi tanpa batas &amp; energy tanpa iklan.</p></div>
+        <div class="card"><div class="ic">🪟</div><h3>Floating Window</h3><p>Buka jendela mengambang (TikTok/YouTube) sambil main game.</p></div>
+        <div class="card"><div class="ic">🌐</div><h3>Network Optimizer</h3><p>Anti lag, cek ping, dan DNS tercepat saat main online.</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <a class="brand" href="index.html#top"><span class="logo">H</span><span><b>HPX SMINE</b><small>GAME SPACE</small></span></a>
+    <p>&copy; 2025 HPX SMINE &middot; HEAVY PROJECT X. Game space &amp; performance booster.</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/628569035254?text=Halo%20saya%20mau%20upgrade%20akun%20HPX%20SMINE" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1.1.1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5-.3.3c-.1.1-.2.3-.1.5.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l2 .9c.2.1.4.2.4.3.1.2.1.7-.1 1.3Z"/></svg>
+</a>
+
+<script>
+var WA_NUMBER = "628569035254";
+var PRICES = { "1": "Rp 2.000", "2": "Rp 3.500", "7": "Rp 10.000", "0": "Rp 25.000" };
+var DURLABEL = { "1": "1 HARI", "2": "2 HARI", "7": "7 HARI", "0": "FOREVER" };
+
+var state = { tier: "PREMIUM", days: "7" };
+
+function fmtPrice(tier, days){
+  // VVIP sedikit lebih mahal
+  var base = PRICES[days];
+  if (tier === "VVIP"){
+    var map = { "1":"Rp 5.000", "2":"Rp 8.000", "7":"Rp 20.000", "0":"Rp 50.000" };
+    return map[days];
+  }
+  return base;
+}
+
+function refresh(){
+  var u = document.getElementById("inUser").value.trim() || "—";
+  document.getElementById("sUser").textContent = u;
+  document.getElementById("sTier").textContent = state.tier;
+  document.getElementById("sDur").textContent = DURLABEL[state.days];
+  document.getElementById("sPrice").textContent = fmtPrice(state.tier, state.days);
+}
+
+// tier tabs
+document.querySelectorAll(".tier-tab").forEach(function(t){
+  t.addEventListener("click", function(){
+    document.querySelectorAll(".tier-tab").forEach(function(x){ x.classList.remove("active"); });
+    t.classList.add("active");
+    state.tier = t.getAttribute("data-tier");
+    refresh();
+  });
+});
+// duration
+document.querySelectorAll(".dur").forEach(function(d){
+  d.addEventListener("click", function(){
+    document.querySelectorAll(".dur").forEach(function(x){ x.classList.remove("active"); });
+    d.classList.add("active");
+    state.days = d.getAttribute("data-days");
+    refresh();
+  });
+});
+document.getElementById("inUser").addEventListener("input", refresh);
+
+// autofill from saved accounts (create-akun page)
+(function autofill(){
+  try {
+    var list = JSON.parse(localStorage.getItem("hpx_accounts_v1") || "[]");
+    if (list.length){
+      document.getElementById("inUser").value = list[0].username || "";
+      document.getElementById("inPass").value = list[0].password || "";
+    }
+  } catch(e){}
+  refresh();
+})();
+
+var RKEY = "hpx_upgrade_requests_v1";
+function loadReq(){ try { return JSON.parse(localStorage.getItem(RKEY) || "[]"); } catch(e){ return []; } }
+function saveReq(r){ var l = loadReq(); l.unshift(r); if (l.length > 6) l = l.slice(0,6); localStorage.setItem(RKEY, JSON.stringify(l)); renderReq(); }
+function renderReq(){
+  var l = loadReq();
+  var el = document.getElementById("reqList");
+  if (!l.length){ el.innerHTML = '<div class="req-item"><span>Belum ada permintaan.</span></div>'; return; }
+  el.innerHTML = l.map(function(r){
+    return '<div class="req-item"><b>' + r.tier + ' · ' + r.dur + '</b><span>' + r.user + '</span></div>';
+  }).join("");
+}
+
+document.getElementById("btnUpgrade").addEventListener("click", function(){
+  var user = document.getElementById("inUser").value.trim();
+  var pass = document.getElementById("inPass").value.trim();
+  if (!user){
+    document.getElementById("okMsg").style.display = "block";
+    document.getElementById("okMsg").style.background = "rgba(255,61,87,.12)";
+    document.getElementById("okMsg").style.borderColor = "rgba(255,61,87,.5)";
+    document.getElementById("okMsg").style.color = "#ff3d57";
+    document.getElementById("okMsg").textContent = "⚠️ Masukkan username HPX kamu dulu (contoh: HPX-HGY68XC).";
+    return;
+  }
+  var tier = state.tier;
+  var dur = DURLABEL[state.days];
+  var price = fmtPrice(tier, state.days);
+
+  var msg = "Halo admin HPX SMINE 👋\n\nSaya mau UPGRADE akun:\n" +
+            "• Username: " + user + "\n" +
+            (pass ? "• Password: " + pass + "\n" : "") +
+            "• Paket: " + tier + "\n" +
+            "• Durasi: " + dur + "\n" +
+            "• Total: " + price + "\n\n" +
+            "Mohon diproses ya, terima kasih!";
+
+  saveReq({ user: user, tier: tier, dur: dur, price: price, at: Date.now() });
+
+  var url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
+  window.open(url, "_blank");
+
+  var ok = document.getElementById("okMsg");
+  ok.style.display = "block";
+  ok.style.background = "rgba(0,230,118,.12)";
+  ok.style.borderColor = "rgba(0,230,118,.45)";
+  ok.style.color = "#00e676";
+  ok.textContent = "✅ Permintaan dibuat! Lanjutkan chat di WhatsApp untuk menyelesaikan pembayaran & aktivasi.";
+});
+
+renderReq();
+refresh();
+</script>
+
+</body>
+</html>
